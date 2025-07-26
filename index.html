@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Protonu Ghosh | Resume Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- AOS Animate On Scroll CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e293b;      /* Deep blue */
+            --accent: #4fd1c5;       /* Teal */
+            --secondary: #2563eb;    /* M365 blue */
+            --gradient: linear-gradient(120deg, #e0eafc 0%, #b6e0fe 50%, #c3edfa 100%);
+            --card-bg: rgba(255,255,255,0.96);
+            --shadow: 0 4px 32px rgba(30,41,59,0.13);
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--gradient);
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 2.8rem 1rem 2rem 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow);
+            background-image: linear-gradient(135deg, #1e293b 70%, #2563eb 100%);
+        }
+        header h1 {
+            font-size: 2.6rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s;
+        }
+        header h3 {
+            font-weight: 400;
+            font-size: 1.2rem;
+            opacity: 0.85;
+            animation: fadeInDown 1.3s;
+        }
+        .container {
+            max-width: 950px;
+            margin: 2.7rem auto 3rem auto;
+            background: var(--card-bg);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 2.8rem 2rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.2s;
+        }
+        h2 {
+            color: var(--secondary);
+            margin-top: 0;
+            letter-spacing: 1px;
+            font-size: 1.35rem;
+            margin-bottom: 0.7rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        .education-list, .skills-list, .soft-skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0;
+        }
+        .education-list {
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .education-list li {
+            background: #f1f7fe;
+            border-left: 5px solid var(--accent);
+            border-radius: 7px;
+            padding: 0.7rem 1.2rem;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.03);
+            font-size: 1.05rem;
+        }
+        .skills-list li, .soft-skills-list li {
+            background: #e3eafc;
+            color: #2563eb;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            list-style: none;
+            font-weight: 500;
+            box-shadow: 0 1px 4px rgba(44,62,80,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .skills-list li:hover, .soft-skills-list li:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 4px 16px var(--accent);
+            background: #b2f7ef;
+        }
+        /* Experience Cards */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            padding: 0;
+        }
+        .exp-card {
+            background: linear-gradient(120deg, #e0eafc 70%, #b6e0fe 100%);
+            border-left: 6px solid var(--secondary);
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.07);
+            padding: 1.3rem 1.2rem 1.1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            animation: fadeIn 1.3s;
+        }
+        .exp-title {
+            font-size: 1.13rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .exp-place {
+            font-size: 1rem;
+            color: var(--secondary);
+        }
+        .exp-period {
+            font-size: 0.98rem;
+            color: #555;
+        }
+        .exp-desc {
+            font-size: 1rem;
+            color: #222;
+            margin-top: 0.35rem;
+        }
+        .counters {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2.5rem 0 1rem 0;
+        }
+        .counter-box {
+            background: #e0f7fa;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            width: 180px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .counter-box:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 6px 24px var(--accent);
+            background: #b2f7ef;
+        }
+        .counter {
+            font-size: 2.5rem;
+            color: #00796b;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+        .counter-box div:last-child {
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+        /* Contact Section */
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1.07rem;
+            color: #222;
+            background: #f9fafc;
+            border-radius: 6px;
+            padding: 0.6rem 1rem;
+            box-shadow: 0 1px 4px rgba(44,62,80,0.05);
+        }
+        .contact-icon {
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+        /* Floating animated circles */
+        .bg-circles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .circle { position: absolute; border-radius: 50%; opacity: 0.18; animation: moveCircle 20s linear infinite; }
+        .circle1 { width: 210px; height: 210px; background: #4fd1c5; left: 5vw; top: 10vh; animation-delay: 0s;}
+        .circle2 { width: 120px; height: 120px; background: #2563eb; left: 80vw; top: 30vh; animation-delay: 3s;}
+        .circle3 { width: 90px; height: 90px; background: #fbbf24; left: 60vw; top: 75vh; animation-delay: 6s;}
+        .circle4 { width: 60px; height: 60px; background: #f472b6; left: 25vw; top: 65vh; animation-delay: 9s;}
+        .circle5 { width: 110px; height: 110px; background: #38bdf8; left: 70vw; top: 10vh; animation-delay: 12s;}
+        @keyframes moveCircle {
+            0% { transform: translateY(0) scale(1);}
+            50% { transform: translateY(-60px) scale(1.1);}
+            100% { transform: translateY(0) scale(1);}
+        }
+        /* Animations */
+        @keyframes fadeInDown { from { opacity:0; transform:translateY(-30px);} to{opacity:1; transform:translateY(0);} }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+        @keyframes fadeIn { from { opacity:0;} to{opacity:1;} }
+        @media (max-width: 600px) {
+            .container { padding: 1rem; }
+            .counters { flex-direction: column; gap: 1rem; }
+            .exp-card { padding: 1rem; }
+        }
+    </style>
+    <!-- AOS Animate On Scroll JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+</head>
+<body>
+    <div class="bg-circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+        <div class="circle circle5"></div>
+    </div>
+    <header data-aos="fade-down" data-aos-duration="1000">
+        <h1>Protonu Ghosh</h1>
+        <h3>Average Engineering Grad</h3>
+    </header>
+    <div class="container">
+        <section class="education" data-aos="fade-up" data-aos-delay="100">
+            <h2>Education</h2>
+            <ul class="education-list">
+                <li><strong>IIEST Shibpur</strong> — B.Tech in Civil Engineering (2024)</li>
+                <li><strong>Silver Point High School</strong> — Higher Secondary Exam (2020)</li>
+            </ul>
+        </section>
+        <section class="skills" data-aos="fade-up" data-aos-delay="200">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>M365 Admin</li>
+                <li>Exchange Online</li>
+                <li>SharePoint Online</li>
+                <li>Teams Admin</li>
+                <li>OneDrive Admin</li>
+                <li>Security & Compliance Center</li>
+                <li>PowerShell Scripting</li>
+                <li>Python</li>
+                <li>NumPy</li>
+                <li>Pandas</li>
+                <li>TensorFlow</li>
+                <li>scikit-learn</li>
+            </ul>
+            <h2>Soft Skills</h2>
+            <ul class="soft-skills-list">
+                <li>Communication</li>
+                <li>Team Building</li>
+                <li>Team Lead</li>
+                <li>Problem Solving</li>
+                <li>Adaptability</li>
+                <li>Time Management</li>
+            </ul>
+        </section>
+        <section class="experience" data-aos="fade-up" data-aos-delay="300">
+            <h2>Experience</h2>
+            <ul class="experience-list">
+                <li class="exp-card" data-aos="fade-right" data-aos-delay="350">
+                    <span class="exp-title">PAT, Cognizant</span>
+                    <span class="exp-place">Chennai, India</span>
+                    <span class="exp-period">2024 – Present</span>
+                    <span class="exp-desc">
+                        Acted as a Microsoft 365 administrator, handling P1 and P2 incidents, user management, security compliance, and automation using PowerShell.<br>
+                        Collaborated with cross-functional teams to resolve critical issues and enhance service reliability.
+                    </span>
+                </li>
+                <li class="exp-card" data-aos="fade-left" data-aos-delay="400">
+                    <span class="exp-title">Intern, IBM AICTE</span>
+                    <span class="exp-place">Remote</span>
+                    <span class="exp-period">2023</span>
+                    <span class="exp-desc">
+                        Performed data analysis on a Superstore dataset and developed interactive Power BI dashboards.<br>
+                        Provided actionable insights to improve business performance.
+                    </span>
+                </li>
+            </ul>
+        </section>
+        <div class="counters" data-aos="zoom-in-up" data-aos-delay="400">
+            <div class="counter-box" onclick="window.location.href='certifications.html'" title="View Certifications">
+                <div class="counter" id="certCounter">0</div>
+                <div>Certifications</div>
+                <div style="margin-top:0.5rem;">MS900 Certified</div>
+            </div>
+            <div class="counter-box" onclick="window.location.href='projects.html'" title="View Projects">
+                <div class="counter" id="projCounter">0</div>
+                <div>Projects</div>
+                <div style="margin-top:0.5rem;">(Add your project titles here)</div>
+            </div>
+        </div>
+        <section class="contact" data-aos="fade-up" data-aos-delay="500">
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li>
+                    <span class="contact-icon">&#128222;</span>
+                    <span>+91 6290887242</span>
+                </li>
+                <li>
+                    <span class="contact-icon">&#9993;</span>
+                    <span>protonughosh@gmail.com</span>
+                </li>
+                <li>
+                    <span class="contact-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.026-3.064-1.868-3.064-1.868 0-2.154 1.459-2.154 2.967v5.701h-3v-10h2.881v1.367h.041c.401-.757 1.381-1.555 2.845-1.555 3.043 0 3.604 2.004 3.604 4.609v5.579z" fill="#4fd1c5"/></svg>
+                    </span>
+                    <span><a href="#" id="linkedin-link" style="color:inherit;text-decoration:underline;">LinkedIn</a></span>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <script>
+        // Counter Animation
+        function animateCounter(id, target) {
+            let count = 0;
+            const speed = 30;
+            const step = Math.ceil(target / 30);
+            const el = document.getElementById(id);
+            function update() {
+                count += step;
+                if (count > target) count = target;
+                el.textContent = count;
+                if (count < target) setTimeout(update, speed);
+            }
+            update();
+        }
+        animateCounter('certCounter', 1);
+        animateCounter('projCounter', 3);
+
+        // LinkedIn link placeholder
+        document.getElementById('linkedin-link').addEventListener('click', function(e){
+            if(this.getAttribute('href') === '#') {
+                e.preventDefault();
+                alert('LinkedIn URL not set yet!');
+            }
+        });
+
+        // Initialize AOS animations
+        AOS.init({
+            once: false, // Animates every time you scroll
+            duration: 900,
+            offset: 80,
+        });
+    </script>
+</body>
+</html>
