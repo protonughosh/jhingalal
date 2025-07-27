@@ -119,6 +119,73 @@
         .back-link:hover {
             color: #00796b;
         }
+        /* 3D-Like Animated Background Objects */
+        .bg-3d-obj { position: absolute; opacity: 0.17; z-index: 0; pointer-events: none; }
+        .cube3d {
+            left: 12vw; top: 68vh; width: 60px; height: 60px;
+            background: linear-gradient(135deg, #2563eb 60%, #b6e0fe 100%);
+            box-shadow: 0 10px 30px #2563eb33;
+            transform: rotate3d(1,1,0,30deg);
+            animation: cubeSpin 7s linear infinite;
+            border-radius: 12px;
+        }
+        @keyframes cubeSpin {
+            0% { transform: rotate3d(1,1,0,30deg) scale(1); }
+            50% { transform: rotate3d(1,1,0,210deg) scale(1.11); }
+            100% { transform: rotate3d(1,1,0,390deg) scale(1); }
+        }
+        .sphere3d {
+            left: 75vw; top: 12vh; width: 54px; height: 54px;
+            background: radial-gradient(circle at 35% 30%, #fbbf24 65%, #f472b6 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 28px #fbbf2433;
+            animation: sphereFloat 8s ease-in-out infinite;
+        }
+        @keyframes sphereFloat {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-22px) scale(1.09); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        .pyramid3d {
+            left: 60vw; top: 75vh; width: 0; height: 0;
+            border-left: 28px solid transparent;
+            border-right: 28px solid transparent;
+            border-bottom: 52px solid #4fd1c5;
+            filter: drop-shadow(0 8px 16px #4fd1c533);
+            animation: pyramidWobble 6s ease-in-out infinite;
+        }
+        @keyframes pyramidWobble {
+            0% { transform: scale(1) rotate(-8deg); }
+            50% { transform: scale(1.07) rotate(8deg); }
+            100% { transform: scale(1) rotate(-8deg); }
+        }
+        /* Upcoming Section */
+        .upcoming-section {
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            animation: fadeInUp 1.2s;
+        }
+        .upcoming-section h2 {
+            color: #2563eb;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .upcoming-card {
+            background: linear-gradient(120deg, #fffbe6 75%, #b6e0fe 100%);
+            border: 2px solid #fbbf2422;
+        }
+        .upcoming-icon {
+            font-size: 2.7rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fbbf24 50%, #f472b6 100%);
+            color: #fff;
+            box-shadow: 0 2px 12px #fbbf2444;
+        }
+        .upcoming-title {
+            color: #fbbf24;
+        }
         @keyframes fadeInUp { from { opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
         @keyframes fadeIn { from { opacity:0;} to{opacity:1;} }
         @media (max-width: 600px) {
@@ -134,6 +201,10 @@
         <div class="circle circle3"></div>
         <div class="circle circle4"></div>
         <div class="circle circle5"></div>
+        <!-- 3D-Like Animated Background Objects -->
+        <div class="bg-3d-obj cube3d"></div>
+        <div class="bg-3d-obj sphere3d"></div>
+        <div class="bg-3d-obj pyramid3d"></div>
     </div>
     <header>
         <h1>My Certifications</h1>
@@ -147,6 +218,27 @@
                 <a href="#" class="cert-link" target="_blank">View Certificate</a>
             </div>
             <!-- Add more cert-card blocks for more certificates -->
+        </div>
+        <div class="upcoming-section">
+            <h2>Upcoming Certifications</h2>
+            <div class="upcoming-list">
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">&#x1F510;</div>
+                    <div class="upcoming-title">MS-102: Microsoft 365 Administrator</div>
+                </div>
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">&#x1F6E1;</div>
+                    <div class="upcoming-title">SC-300: Microsoft Identity and Access Administrator</div>
+                </div>
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">&#x2601;</div>
+                    <div class="upcoming-title">AWS Cloud Practitioner</div>
+                </div>
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">&#x1F30E;</div>
+                    <div class="upcoming-title">GCP Cloud Digital Leader</div>
+                </div>
+            </div>
         </div>
         <a href="index.html" class="back-link">&#8592; Back to Portfolio</a>
     </div>
