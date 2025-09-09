@@ -117,6 +117,14 @@
         @media (max-width: 600px) {
             .container { padding: 1rem; }
         }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.7; transform: scale(1.15); }
+        }
     </style>
 </head>
 <body>
@@ -132,16 +140,30 @@
     </header>
     <div class="container">
         <ul class="project-list">
-            <!-- Example Project Card -->
-            <li class="project-card">
-                <span class="project-title">Project Title 1</span>
-                <span class="project-desc">Short description of your project goes here. Highlight your role, technologies used, and impact.</span>
-                <a href="#" class="project-link" target="_blank">View Project</a>
+            <!-- M365 Admin Portal Simulation -->
+            <li class="project-card" style="border-left: 6px solid #4fd1c5; animation: fadeIn 1.3s;">
+                <span class="project-title" style="display:flex;align-items:center;gap:0.5rem;">
+                    <svg width="22" height="22" fill="#4fd1c5" style="animation:spin 2.5s linear infinite;"><circle cx="11" cy="11" r="10" stroke="#2d3e50" stroke-width="2" fill="none"/><path d="M11 5v6l4 2" stroke="#4fd1c5" stroke-width="2" fill="none"/></svg>
+                    M365 Admin Portal Simulation
+                </span>
+                <span class="project-desc">
+                    <b>Tech:</b> RBAC, Windsurf IDE<br>
+                    Built a simulated Microsoft 365 Admin Portal using Windsurf IDE and RBAC.<br>
+                    <b>Highlights:</b> Role-based access control, realistic admin experience.<br>
+                    <b>GitHub:</b> <a href="#" class="project-link" target="_blank">View Repository</a>
+                </span>
             </li>
-            <li class="project-card">
-                <span class="project-title">Project Title 2</span>
-                <span class="project-desc">Another project description. You can add as many project cards as you want.</span>
-                <a href="#" class="project-link" target="_blank">View Project</a>
+            <!-- Azure AD Deployment -->
+            <li class="project-card" style="border-left: 6px solid #38bdf8; animation: fadeIn 1.6s;">
+                <span class="project-title" style="display:flex;align-items:center;gap:0.5rem;">
+                    <svg width="22" height="22" fill="#38bdf8" style="animation: pulse 1.8s infinite alternate;"><circle cx="11" cy="11" r="10" stroke="#2d3e50" stroke-width="2" fill="none"/><rect x="7" y="7" width="8" height="8" fill="#38bdf8"/></svg>
+                    Azure AD Deployment
+                </span>
+                <span class="project-desc">
+                    <b>Tech:</b> Azure Portal, Identity Management<br>
+                    Configured and deployed Azure Active Directory for enterprise identity management.<br>
+                    Set up user groups, conditional access policies, and integrated with Microsoft 365.
+                </span>
             </li>
             <!-- Add more project cards as needed -->
         </ul>
