@@ -30,7 +30,7 @@
             position: relative;
             z-index: 2;
             box-shadow: var(--shadow);
-            background-image: linear-gradient(135deg, #1e293b 70%, #2563eb 100%);
+            background-image: linear-gradient(135deg, #1e293b 60%, #e80d0d 100%);
         }
         header h1 {
             font-size: 2.6rem;
@@ -84,8 +84,8 @@
             font-size: 1.05rem;
         }
         .skills-list li, .soft-skills-list li {
-            background: #e3eafc;
-            color: #2563eb;
+            background: #fce3e3;
+            color: #eb7e25;
             border-radius: 5px;
             padding: 0.5rem 1rem;
             list-style: none;
@@ -110,7 +110,7 @@
   flex-wrap: wrap;
 }
 .exp-card-3d {
-  background: linear-gradient(120deg, #e0eafc 65%, #b6e0fe 100%);
+  background: linear-gradient(120deg, #e0eafc 65%, #feb6b6 100%);
   border-radius: 20px;
   box-shadow: 0 8px 32px #2563eb22, 0 1.5px 12px #fbbf2422;
   border: 2.5px solid #2563eb33;
@@ -385,7 +385,7 @@
     /* Responsive for cards */
     @media (max-width:800px){ .edu-cards-parallax{flex-direction:column;gap:1.2rem;} .edu-card{width:95vw;max-width:320px;} }
     /* Accessibility: focus effect for flip cards */
-    .flip-card:focus { outline:2.5px solid #2563eb88; }
+    .flip-card:focus { outline:2.5px solid #ebeb1beb; }
     </style>
     <!-- AOS Animate On Scroll JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -428,7 +428,7 @@
             <img src="microsoft-logo.svg" id="ms-logo-3d" style="width:90px;height:90px;opacity:0.7;filter:drop-shadow(0 6px 24px #2563eb77);" alt="Microsoft 3D Logo" />
         </div>
         <h1 style="position:relative;z-index:2;">Protonu Ghosh</h1>
-        <h3 style="position:relative;z-index:2;">Average Engineering Grad</h3>
+        <h3 style="position:relative;z-index:2;">Trying to do better!</h3>
     </header>
     <div class="container">
         <section class="education dramatic-edu" data-aos="fade-up" data-aos-delay="100">
@@ -526,6 +526,26 @@
         <section class="experience dramatic-exp" data-aos="fade-up" data-aos-delay="300">
     <h2>Experience</h2>
     <div class="exp-cards-3d">
+      <!-- Associate -->
+      <div class="exp-card-3d" tabindex="0">
+        <div class="exp-3d-icon">
+          <!-- Rotating cube SVG icon -->
+          <svg width="44" height="44" viewBox="0 0 44 44">
+            <g>
+              <rect x="8" y="8" width="28" height="28" rx="7" fill="#2563eb" opacity="0.82"/>
+              <rect x="13" y="13" width="18" height="18" rx="5" fill="#b6e0fe" opacity="0.5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">Associate - Tech Consultant</div>
+          <div class="exp-place">PwC, Kolkata, India</div>
+          <div class="exp-period">Jan 2026</div>
+          <ul class="exp-desc">
+            <li>Will SEE </li>
+          </ul>
+        </div>
+      </div>
       <!-- Programmer Analyst -->
       <div class="exp-card-3d" tabindex="0">
         <div class="exp-3d-icon">
@@ -598,7 +618,7 @@
             <div class="counter-box" onclick="window.location.href='certifications.html'" title="View Certifications">
                 <div class="counter" id="certCounter">0</div>
                 <div>Certifications</div>
-                <div style="margin-top:0.5rem;">MS900, AI900 Passed</div>
+                <div style="margin-top:0.5rem;">MS900, AI900 , GCP CDL</div>
             </div>
             <div class="counter-box" onclick="window.location.href='projects.html'" title="View Projects">
                 <div class="counter" id="projCounter">0</div>
@@ -642,8 +662,8 @@
             }
             update();
         }
-        animateCounter('certCounter', 1);
-        animateCounter('projCounter', 3);
+        animateCounter('certCounter', 3);
+        animateCounter('projCounter', 2);
 
         // LinkedIn link placeholder
         document.getElementById('linkedin-link').addEventListener('click', function(e){
